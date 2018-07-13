@@ -1,0 +1,1 @@
+export const LOAD_ID_FROM_STORE = 'userId/load';
