@@ -18,7 +18,7 @@ const AccountRedirect = class extends React.Component {
         if(hasAccount === '') {
             return <Text>Loading</Text>;
         }
-        return !hasAccount === null ? <Redirect to="/matches" /> : <Redirect to="/register" />;
+        return hasAccount !== null ? <Redirect to="/matches" /> : <Redirect to="/register" />;
     }
 }
 
