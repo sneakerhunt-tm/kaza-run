@@ -3,9 +3,11 @@ import { connect } from 'react-redux'
 import { View, Text, TextInput, StyleSheet, Button, Image, Radio } from 'react-native';
 import PhotoUpload from 'react-native-photo-upload';
 import SwitchSelector from 'react-native-switch-selector';
-//const {width, height} = Dimension.get('window');
+import { createUser } from '../store/userId/actions';
 
-const Register = () => {
+const Register = (props) => {
+    const { dispatch, history } = props;
+
     const model = {
         fullName: null,
         age: null,
@@ -25,8 +27,13 @@ const Register = () => {
         {label: 'Waiter', value: 1},
     ]
     const login = () => {
-        alert('idi nahoooooooooi' + JSON.stringify(model))
+        createUser(dispatch, model).then(() => {
+            history.push('matches');
+        });
     }
+
+
+
     return (
         <View>
             <Text style={styles.text}>Registration</Text>
@@ -87,4 +94,4 @@ const styles = StyleSheet.create({
     }
   });
 
-export default connect((state) => { return {} }, (dispatch) => { return {} })(Register);
+export default connect((state) => { return {} },)(Register);

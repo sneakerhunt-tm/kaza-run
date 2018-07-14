@@ -14,11 +14,10 @@ const AccountRedirect = class extends React.Component {
     render() {
         const { hasAccount } = this.props;
 
-        if(hasAccount === '') {
-            return <Text>Loading</Text>;
+        if(hasAccount === null) {
+            return <Redirect to="/register" />;
         }
-        return <Redirect to="/matches" />
-        //return hasAccount !== null ? <Redirect to="/matches" /> : <Redirect to="/register" />;
+        return hasAccount.id !== undefined ? <Redirect to="/matches" /> : <Text>Loading</Text>;
     }
 }
 
