@@ -70,11 +70,10 @@ const styles = StyleSheet.create({
     imageBlock: {
         marginTop: 40,
         padding: 0,
-        height: 160,
+        height: 150,
         marginBottom: 20,
     },
     text: {
-        marginTop: 30,
         textAlign: 'center',
         fontSize: 30,
     },

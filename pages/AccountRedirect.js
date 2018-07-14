@@ -2,7 +2,6 @@ import React from 'react';
 import { Text } from 'react-native';
 import { Redirect } from 'react-router-native';
 import { connect } from 'react-redux';
-
 import { loadAccountId } from '../store/userId/actions';
 
 const AccountRedirect = class extends React.Component {
@@ -18,7 +17,8 @@ const AccountRedirect = class extends React.Component {
         if(hasAccount === '') {
             return <Text>Loading</Text>;
         }
-        return hasAccount !== null ? <Redirect to="/matches" /> : <Redirect to="/register" />;
+        return <Redirect to="/matches" />
+        //return hasAccount !== null ? <Redirect to="/matches" /> : <Redirect to="/register" />;
     }
 }
 
